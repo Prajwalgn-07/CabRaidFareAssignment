@@ -1,11 +1,8 @@
 public class FareCalculator implements DefaultPriceAndDistances {
     int totalFare;
-    int totalDistanceTravelled;
-    public FareCalculator(int distance){
+
+    public int calculate(int totalDistanceTravelled){
         totalFare=flatPrice;
-        this.totalDistanceTravelled=distance;
-    }
-    public int calculate(){
         if(totalDistanceTravelled>0 && totalDistanceTravelled<= flatPriceDistance){
             return totalFare;
         }
