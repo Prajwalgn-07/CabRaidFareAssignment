@@ -1,4 +1,4 @@
-public interface Price {
+public interface DefaultPriceAndDistances {
     int flatPrice=30;
     int flatPriceDistance =2;
     int firstBreakUpPrice=20;

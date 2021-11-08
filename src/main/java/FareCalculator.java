@@ -1,4 +1,4 @@
-public class FareCalculator implements Price {
+public class FareCalculator implements DefaultPriceAndDistances {
     int totalFare;
     int totalDistanceTravelled;
     public FareCalculator(int distance){
