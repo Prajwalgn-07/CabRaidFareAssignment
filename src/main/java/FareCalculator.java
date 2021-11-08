@@ -9,7 +9,7 @@ public class FareCalculator implements Price {
         if(totalDistanceTravelled>0 && totalDistanceTravelled<= flatPriceDistance){
             return totalFare;
         }
-       if(totalDistanceTravelled<=firstBreakUpDistance){
+       if(totalDistanceTravelled<firstBreakUpDistance){
            totalFare+=(firstBreakUpPrice*(firstBreakUpDistance-totalDistanceTravelled));
        }
        if(totalDistanceTravelled>=firstBreakUpDistance){
