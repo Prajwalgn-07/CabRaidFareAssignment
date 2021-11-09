@@ -23,4 +23,8 @@ public class InvoiceTest {
     public void forLargeDistance(){
         Assert.assertEquals(7390,fareCalculator.calculate(250));
     }
+    @Test
+    public void forFloatingDistance(){
+        Assert.assertEquals(160,fareCalculator.calculate(8.5f));
+    }
 }
