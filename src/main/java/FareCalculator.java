@@ -1,8 +1,12 @@
 public class FareCalculator implements DefaultPriceAndDistances {
     float totalFare;
-
-    public int calculate(float totalDistanceTravelled){
+    public FareCalculator(){
         totalFare=flatPrice;
+    }
+    public int calculate(float totalDistanceTravelled){
+        if(totalDistanceTravelled<=0){
+           System.exit(0);
+        }
         if(totalDistanceTravelled>0 && totalDistanceTravelled<= flatPriceDistance){
             return Math.round(totalFare);
         }
@@ -16,5 +20,4 @@ public class FareCalculator implements DefaultPriceAndDistances {
        }
        return Math.round(totalFare);
     }
-
 }
