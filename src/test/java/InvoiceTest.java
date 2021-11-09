@@ -27,4 +27,8 @@ public class InvoiceTest {
     public void forFloatingDistance(){
         Assert.assertEquals(160,fareCalculator.calculate(8.5f));
     }
+    @Test
+    public void negativeDistanceTest(){
+        fareCalculator.calculate(-1);
+    }
 }
