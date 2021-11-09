@@ -1,20 +1,20 @@
 public class FareCalculator implements DefaultPriceAndDistances {
-    int totalFare;
+    float totalFare;
 
-    public int calculate(int totalDistanceTravelled){
+    public int calculate(float totalDistanceTravelled){
         totalFare=flatPrice;
         if(totalDistanceTravelled>0 && totalDistanceTravelled<= flatPriceDistance){
-            return totalFare;
+            return Math.round(totalFare);
         }
        if(totalDistanceTravelled<firstBreakUpDistance){
-           totalFare+=(firstBreakUpPrice*(firstBreakUpDistance-totalDistanceTravelled));
+           totalFare+=(firstBreakUpPrice*(totalDistanceTravelled-flatPriceDistance));
        }
        if(totalDistanceTravelled>=firstBreakUpDistance){
-           int firstBreakToLastPointDistance=(totalDistanceTravelled-firstBreakUpDistance);
+           int firstBreakToLastPointDistance= (int) (totalDistanceTravelled-firstBreakUpDistance);
            totalFare+=(firstBreakUpPrice*((totalDistanceTravelled- flatPriceDistance)-firstBreakToLastPointDistance));
            totalFare+=firstBreakToLastPointDistance* LastBreakUpPrice;
        }
-       return totalFare;
+       return Math.round(totalFare);
     }
 
 }
